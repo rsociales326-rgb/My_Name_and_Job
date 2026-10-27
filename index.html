@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: First Contacts | Teacher Verónica Hermida</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Lexend for maximum readability -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #f8fafc;
+        }
+        .step-tab.active {
+            background-color: #0d9488;
+            color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.3);
+        }
+        .bounce-hover:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between text-slate-800 bg-slate-50">
+
+    <!-- TOP HEADER -->
+    <header class="bg-white border-b border-slate-200 py-4 px-4 sticky top-0 z-50 shadow-xs">
+        <div class="max-w-3xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-1">
+            <div>
+                <p class="text-xs font-bold text-teal-600 uppercase tracking-widest">Teacher Verónica Hermida</p>
+                <h1 class="text-xl sm:text-2xl font-bold text-slate-900">Unit 1: Introducing Yourself</h1>
+            </div>
+            <span class="text-2xl">👋💬</span>
+        </div>
+    </header>
+
+    <!-- STEP TABS -->
+    <div class="max-w-3xl mx-auto px-4 mt-6 w-full">
+        <div class="grid grid-cols-4 gap-2 bg-slate-200 p-1.5 rounded-2xl text-center">
+            <button onclick="showStep(1)" id="tab-1" class="step-tab active py-2.5 px-1 rounded-xl text-xs sm:text-sm font-bold transition flex flex-col sm:flex-row items-center justify-center gap-1">
+                <span>1.</span> <span>Listen 👂</span>
+            </button>
+            <button onclick="showStep(2)" id="tab-2" class="step-tab py-2.5 px-1 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-teal-700 transition flex flex-col sm:flex-row items-center justify-center gap-1">
+                <span>2.</span> <span>Match 🧩</span>
+            </button>
+            <button onclick="showStep(3)" id="tab-3" class="step-tab py-2.5 px-1 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-teal-700 transition flex flex-col sm:flex-row items-center justify-center gap-1">
+                <span>3.</span> <span>Badge 🏷️</span>
+            </button>
+            <button onclick="showStep(4)" id="tab-4" class="step-tab py-2.5 px-1 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-teal-700 transition flex flex-col sm:flex-row items-center justify-center gap-1">
+                <span>4.</span> <span>Quiz ⭐</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="max-w-3xl mx-auto px-4 py-6 w-full flex-grow">
+
+        <!-- STEP 1: LISTEN & SEE -->
+        <section id="step-1" class="step-content">
+            <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                <div class="text-center">
+                    <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Step 1</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-2">Listen & Read</h2>
+                    <p class="text-slate-500 text-sm">Click the buttons to listen! 🔊</p>
+                </div>
+
+                <!-- DIALOGUE 1 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-6 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Formal Meeting</span>
+                        <button onclick="speakText('Hello, I am Luis. Hello, my name is Fabienne.')" class="bg-teal-600 hover:bg-teal-700 text-white text-xs px-3 py-1.5 rounded-xl font-bold transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-play"></i> Play All
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+                        <div class="w-12 h-12 rounded-full bg-teal-100 text-teal-700 font-bold flex items-center justify-center text-xl shrink-0">👨‍💼</div>
+                        <div class="flex-grow">
+                            <p class="text-xs font-bold text-slate-400">Luis</p>
+                            <p class="text-lg font-semibold text-slate-900">"Hello, I'm <span class="text-teal-600">Luis</span>."</p>
+                        </div>
+                        <button onclick="speakText('Hello, I am Luis.')" class="w-10 h-10 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-full flex items-center justify-center transition">
+                            <i class="fa-solid fa-volume-high text-lg"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-xl shrink-0">👩‍💼</div>
+                        <div class="flex-grow">
+                            <p class="text-xs font-bold text-slate-400">Fabienne</p>
+                            <p class="text-lg font-semibold text-slate-900">"Hello, my name's <span class="text-indigo-600">Fabienne</span>."</p>
+                        </div>
+                        <button onclick="speakText('Hello, my name is Fabienne.')" class="w-10 h-10 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center transition">
+                            <i class="fa-solid fa-volume-high text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- DIALOGUE 2 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-6 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Casual Break</span>
+                        <button onclick="speakText('Hello, I am Takeshi. Hi, I am Paula.')" class="bg-amber-600 hover:bg-amber-700 text-white text-xs px-3 py-1.5 rounded-xl font-bold transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-play"></i> Play All
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+                        <div class="w-12 h-12 rounded-full bg-cyan-100 text-cyan-700 font-bold flex items-center justify-center text-xl shrink-0">👨‍💻</div>
+                        <div class="flex-grow">
+                            <p class="text-xs font-bold text-slate-400">Takeshi</p>
+                            <p class="text-lg font-semibold text-slate-900">"Hello, I'm <span class="text-cyan-600">Takeshi</span>."</p>
+                        </div>
+                        <button onclick="speakText('Hello, I am Takeshi.')" class="w-10 h-10 bg-cyan-50 hover:bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center transition">
+                            <i class="fa-solid fa-volume-high text-lg"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+                        <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 font-bold flex items-center justify-center text-xl shrink-0">👩‍🎨</div>
+                        <div class="flex-grow">
+                            <p class="text-xs font-bold text-slate-400">Paula</p>
+                            <p class="text-lg font-semibold text-slate-900">"Hi, I'm <span class="text-amber-600">Paula</span>."</p>
+                        </div>
+                        <button onclick="speakText('Hi, I am Paula.')" class="w-10 h-10 bg-amber-50 hover:bg-amber-100 text-amber-700 rounded-full flex items-center justify-center transition">
+                            <i class="fa-solid fa-volume-high text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button onclick="showStep(2)" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3.5 rounded-2xl text-center shadow-md transition flex items-center justify-center gap-2">
+                    <span>Next Task</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- STEP 2: TASK 1 - COMPLETE THE SENTENCES -->
+        <section id="step-2" class="step-content hidden">
+            <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                <div class="text-center">
+                    <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Step 2</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-2">Complete the Speech</h2>
+                    <p class="text-slate-500 text-sm">Click the correct word! 🧩</p>
+                </div>
+
+                <div id="match-container" class="space-y-6">
+                    <!-- Dynamic Match Cards JS -->
+                </div>
+
+                <button onclick="showStep(3)" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3.5 rounded-2xl text-center shadow-md transition flex items-center justify-center gap-2">
+                    <span>Next Task</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- STEP 3: TASK 2 - MAKE YOUR BADGE & SPEAK -->
+        <section id="step-3" class="step-content hidden">
+            <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                <div class="text-center">
+                    <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Step 3</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-2">Make Your Badge 🏷️</h2>
+                    <p class="text-slate-500 text-sm">Type your name or click a quick preset!</p>
+                </div>
+
+                <!-- PRESETS -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-400 mb-1">1. Your Name:</label>
+                        <input type="text" id="badge-name-input" placeholder="Type name..." oninput="updateBadgeDisplay()" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-lg font-bold text-slate-800 outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-400 mb-1">2. Quick Job Selection:</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                            <button onclick="setJob('Manager')" class="job-preset p-2 bg-slate-100 hover:bg-teal-100 text-slate-700 hover:text-teal-800 font-bold text-xs rounded-xl border border-slate-200 transition">👔 Manager</button>
+                            <button onclick="setJob('Designer')" class="job-preset p-2 bg-slate-100 hover:bg-teal-100 text-slate-700 hover:text-teal-800 font-bold text-xs rounded-xl border border-slate-200 transition">🎨 Designer</button>
+                            <button onclick="setJob('Developer')" class="job-preset p-2 bg-slate-100 hover:bg-teal-100 text-slate-700 hover:text-teal-800 font-bold text-xs rounded-xl border border-slate-200 transition">💻 Developer</button>
+                            <button onclick="setJob('Student')" class="job-preset p-2 bg-slate-100 hover:bg-teal-100 text-slate-700 hover:text-teal-800 font-bold text-xs rounded-xl border border-slate-200 transition">📚 Student</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LIVE BADGE CARD -->
+                <div class="bg-gradient-to-r from-teal-600 to-indigo-600 text-white p-6 rounded-2xl shadow-lg relative text-center space-y-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest bg-white/20 px-2.5 py-0.5 rounded-full">CONFERENCE BADGE</span>
+                    <div id="badge-avatar" class="w-16 h-16 bg-white/20 rounded-full mx-auto flex items-center justify-center text-3xl">👤</div>
+                    <h3 id="badge-name-view" class="text-2xl font-bold">Your Name</h3>
+                    <p id="badge-job-view" class="text-sm font-medium text-teal-100">Manager</p>
+
+                    <div class="pt-3 border-t border-white/20">
+                        <button onclick="speakMyBadge()" class="bg-white text-teal-800 hover:bg-teal-50 font-bold px-4 py-2 rounded-xl text-xs inline-flex items-center gap-2 shadow-sm transition">
+                            <i class="fa-solid fa-volume-high text-sm"></i> Hear My Intro
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-teal-50 border border-teal-200 rounded-2xl text-center space-y-1">
+                    <p class="text-xs font-bold text-teal-900 uppercase">🎤 NOW SAY IT OUT LOUD!</p>
+                    <p id="badge-speech-prompt" class="text-base font-bold text-teal-800">"Hello, I'm [Name]. I'm a Manager."</p>
+                </div>
+
+                <button onclick="showStep(4)" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3.5 rounded-2xl text-center shadow-md transition flex items-center justify-center gap-2">
+                    <span>Next Task</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- STEP 4: TASK 3 - QUICK QUIZ -->
+        <section id="step-4" class="step-content hidden">
+            <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                <div class="text-center">
+                    <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Step 4</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-2">Quick Practice ⭐</h2>
+                    <p class="text-slate-500 text-sm">Select the best answer!</p>
+                </div>
+
+                <div id="quiz-box" class="space-y-6">
+                    <!-- Dynamic Randomized Quiz Cards -->
+                </div>
+
+                <div class="text-center pt-2">
+                    <button onclick="initQuiz()" class="text-xs font-bold text-slate-400 hover:text-teal-600 underline">
+                        <i class="fa-solid fa-rotate-right"></i> Play Again (Shuffle Answers)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs font-semibold text-slate-400">
+        Teacher Verónica Hermida • Starter A
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Web Speech API
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utter = new SpeechSynthesisUtterance(text);
+                utter.lang = 'en-US';
+                utter.rate = 0.85;
+                window.speechSynthesis.speak(utter);
+            }
+        }
+
+        // Tab Navigation
+        function showStep(stepNum) {
+            document.querySelectorAll('.step-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.step-tab').forEach(el => {
+                el.classList.remove('active', 'bg-teal-600', 'text-white');
+                el.classList.add('text-slate-600');
+            });
+
+            document.getElementById(`step-${stepNum}`).classList.remove('hidden');
+            const activeTab = document.getElementById(`tab-${stepNum}`);
+            activeTab.classList.add('active');
+        }
+
+        /* ---------------- TASK 1: MATCHING DATA ---------------- */
+        const matchData = [
+            {
+                prompt: "____, I'm Luis.",
+                correct: "Hello",
+                options: ["Hello", "Bye", "Book"]
+            },
+            {
+                prompt: "Hi, ____ name's Paula.",
+                correct: "my",
+                options: ["my", "I", "is"]
+            },
+            {
+                prompt: "Hello, ____ Takeshi.",
+                correct: "I'm",
+                options: ["I'm", "name", "are"]
+            }
+        ];
+
+        function renderMatchActivity() {
+            const container = document.getElementById('match-container');
+            container.innerHTML = '';
+
+            matchData.forEach((item, idx) => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-3";
+
+                const questionText = document.createElement('p');
+                questionText.className = "text-xl font-bold text-slate-900 text-center";
+                questionText.innerText = item.prompt;
+                card.appendChild(questionText);
+
+                const optsDiv = document.createElement('div');
+                optsDiv.className = "grid grid-cols-3 gap-2";
+
+                // Shuffle options
+                const shuffled = [...item.options].sort(() => Math.random() - 0.5);
+
+                const feedback = document.createElement('p');
+                feedback.className = "text-center text-xs font-bold hidden";
+
+                shuffled.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = "py-3 px-2 bg-white border border-slate-200 rounded-xl font-bold text-slate-800 hover:border-teal-500 shadow-xs transition text-sm";
+                    btn.innerText = opt;
+                    btn.onclick = () => {
+                        if (opt === item.correct) {
+                            btn.className = "py-3 px-2 bg-emerald-500 text-white font-bold rounded-xl text-sm shadow-xs";
+                            feedback.className = "text-center text-xs font-bold text-emerald-600 block";
+                            feedback.innerText = "✓ Correct!";
+                            speakText(item.prompt.replace('____', opt));
+                        } else {
+                            btn.className = "py-3 px-2 bg-rose-100 text-rose-700 border border-rose-300 font-bold rounded-xl text-sm shadow-xs";
+                            feedback.className = "text-center text-xs font-bold text-rose-500 block";
+                            feedback.innerText = "Try again!";
+                        }
+                    };
+                    optsDiv.appendChild(btn);
+                });
+
+                card.appendChild(optsDiv);
+                card.appendChild(feedback);
+                container.appendChild(card);
+            });
+        }
+
+        /* ---------------- TASK 2: BADGE LOGIC ---------------- */
+        let currentJob = "Manager";
+
+        function setJob(job) {
+            currentJob = job;
+            document.getElementById('badge-job-view').innerText = job;
+            updateBadgeDisplay();
+        }
+
+        function updateBadgeDisplay() {
+            const nameInput = document.getElementById('badge-name-input').value.trim();
+            const displayName = nameInput !== "" ? nameInput : "Your Name";
+            
+            document.getElementById('badge-name-view').innerText = displayName;
+            document.getElementById('badge-speech-prompt').innerText = `"Hello, I'm ${displayName}. I'm a ${currentJob}."`;
+        }
+
+        function speakMyBadge() {
+            const nameInput = document.getElementById('badge-name-input').value.trim();
+            const displayName = nameInput !== "" ? nameInput : "Maria";
+            speakText(`Hello, I'm ${displayName}. I'm a ${currentJob}.`);
+        }
+
+        /* ---------------- TASK 3: QUIZ DATA ---------------- */
+        const quizData = [
+            {
+                scenario: "Someone says: 'Hello, I'm Alex.' 👋",
+                correct: "Hi, I'm Maria.",
+                options: ["Hi, I'm Maria.", "Good night.", "Thank you."]
+            },
+            {
+                scenario: "Someone says: 'Nice to meet you.'🤝",
+                correct: "Nice to meet you!",
+                options: ["Nice to meet you!", "Bye bye.", "No, thanks."]
+            },
+            {
+                scenario: "Complete: 'My ______ Fabienne.'",
+                correct: "name's",
+                options: ["name's", "is I'm", "hello"]
+            }
+        ];
+
+        function initQuiz() {
+            const container = document.getElementById('quiz-box');
+            container.innerHTML = '';
+
+            quizData.forEach((item, idx) => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200 space-y-3";
+
+                const qTitle = document.createElement('p');
+                qTitle.className = "font-bold text-slate-800 text-sm sm:text-base";
+                qTitle.innerText = item.scenario;
+                card.appendChild(qTitle);
+
+                const optsDiv = document.createElement('div');
+                optsDiv.className = "space-y-2";
+
+                const feedback = document.createElement('p');
+                feedback.className = "text-xs font-bold hidden";
+
+                // Shuffle options
+                const shuffled = [...item.options].sort(() => Math.random() - 0.5);
+
+                shuffled.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = "w-full text-left p-3 bg-white border border-slate-200 rounded-xl font-bold text-slate-800 hover:border-teal-500 shadow-xs text-sm transition";
+                    btn.innerText = opt;
+                    btn.onclick = () => {
+                        const allBtns = optsDiv.querySelectorAll('button');
+                        allBtns.forEach(b => b.disabled = true);
+
+                        feedback.classList.remove('hidden');
+                        if (opt === item.correct) {
+                            btn.className = "w-full text-left p-3 bg-emerald-500 text-white font-bold rounded-xl text-sm shadow-xs";
+                            feedback.className = "text-xs font-bold text-emerald-600 block";
+                            feedback.innerText = "⭐ Great job!";
+                            speakText(opt);
+                        } else {
+                            btn.className = "w-full text-left p-3 bg-rose-500 text-white font-bold rounded-xl text-sm shadow-xs";
+                            feedback.className = "text-xs font-bold text-rose-500 block";
+                            feedback.innerText = "Not quite!";
+                        }
+                    };
+                    optsDiv.appendChild(btn);
+                });
+
+                card.appendChild(optsDiv);
+                card.appendChild(feedback);
+                container.appendChild(card);
+            });
+        }
+
+        // On Load Initializer
+        window.onload = function() {
+            renderMatchActivity();
+            initQuiz();
+        };
+    </script>
+</body>
+</html>
